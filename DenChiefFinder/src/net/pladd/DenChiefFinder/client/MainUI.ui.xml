@@ -1,0 +1,82 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:p1="urn:import:com.google.gwt.user.cellview.client">
+	<ui:style>
+	/* Add CSS here. See the GWT docs on UI Binder for more details */
+	</ui:style>
+	<g:VerticalPanel width="100%" height="100%">
+		<g:HorizontalPanel width="100%">
+			<g:Cell verticalAlignment="ALIGN_MIDDLE">
+				<g:HTML wordWrap="true" horizontalAlignment="ALIGN_LEFT">
+				<h3>DenChief Finder</h3>
+				</g:HTML>
+			</g:Cell>
+			<g:Cell verticalAlignment="ALIGN_MIDDLE" horizontalAlignment="ALIGN_RIGHT">
+				<g:Label ui:field="headerLabel" text="Loading..." />
+			</g:Cell>
+		</g:HorizontalPanel>
+		<g:TabLayoutPanel barHeight="2" barUnit="EM">
+			<g:tab>
+				<g:header>Den Chiefs</g:header>
+				<g:ScrollPanel ui:field="denChiefPanel">
+					<g:SplitLayoutPanel ui:field="denChiefDock">
+						<g:north size="1.0">
+							<g:FlowPanel ui:field="denChiefSearchPanel">
+								<g:Label text="Search Near:" />
+								<g:TextBox ui:field="denChiefSearchText" />
+								<g:ListBox ui:field="denChiefSearchDistance">
+									<g:item value="5">5</g:item>
+									<g:item value="10">10</g:item>
+									<g:item value="15">15</g:item>
+									<g:item value="25">25</g:item>
+									<g:item value="50">50</g:item>
+								</g:ListBox>
+								<g:Button ui:field="denChiefSearchBtn">Search</g:Button>
+							</g:FlowPanel>
+						</g:north>
+						<g:south size="1.0">
+							<p1:CellTable ui:field="denChiefCells" />
+						</g:south>
+						<g:center>
+							<g:Frame ui:field="denChiefMap"></g:Frame>
+						</g:center>
+					</g:SplitLayoutPanel>
+				</g:ScrollPanel>
+			</g:tab>
+			<g:tab>
+				<g:header>Dens</g:header>
+				<g:ScrollPanel ui:field="denPanel">
+					<g:SplitLayoutPanel ui:field="denDock">
+						<g:north size="1.0">
+							<g:FlowPanel>
+								<g:Label text="Search Near:"/>
+								<g:TextBox ui:field="denSearchText" />
+								<g:ListBox ui:field="denSearchDistance">
+									<g:item value="5">5</g:item>
+									<g:item value="10">10</g:item>
+									<g:item value="15">15</g:item>
+									<g:item value="25">25</g:item>
+									<g:item value="50">50</g:item>
+								</g:ListBox>
+								<g:Button ui:field="denSearchBtn">Search</g:Button>
+							</g:FlowPanel>
+						</g:north>
+						<g:south size="1.0">
+							<p1:CellTable ui:field="denCells" />
+						</g:south>
+						<g:center>
+							<g:Frame ui:field="denMap"></g:Frame>
+						</g:center>
+					</g:SplitLayoutPanel>
+				</g:ScrollPanel>
+			</g:tab>
+			<g:tab>
+				<g:header>Profile</g:header>
+				<g:ScrollPanel ui:field="profilePanel" />
+			</g:tab>
+		</g:TabLayoutPanel>
+	</g:VerticalPanel>
+	<!-- Add GWT widgets here. Enter < and hit Ctrl-Space to auto-complete widget 
+		names. The ui:field attribute binds an element to a field in the owner class. 
+		See the GWT docs on UI Binder for more details. -->
+</ui:UiBinder> 
